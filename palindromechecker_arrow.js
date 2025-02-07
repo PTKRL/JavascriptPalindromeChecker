@@ -5,19 +5,15 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-function isPalindrome(word) {
-  //Merkkijono pieniksi kirjaimiksi
+//Arrow-funktiolla
+const isPalindrome = (word) => {
   word = word.toLowerCase();
-
-  //Käännetään merkkijono toisin päin
   let reversed = "";
   for (let i = word.length - 1; i >= 0; i--) {
     reversed += word[i];
   }
-
-  //Palauttaa tiedon siitä, onko käännetty merkkijono sama kuin alkuperäinen, eli palindromi
   return reversed === word;
-}
+};
 
 //Pyydetään merkkijono käyttäjältä ja testataan se
 rl.question("Anna sana: ", (word) => {
